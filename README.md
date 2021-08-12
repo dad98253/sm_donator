@@ -174,7 +174,7 @@ Note:
 Compiling Information:
 
 
-    You must have loghelper.inc to compile donator.chatcolor
+    You must have loghelper.inc to compile donator.chatcolor (see https://github.com/dad98253/loghelper)
 
     The web compiler will not work.
     You must compile donator.core manually (it requires donator.inc)
