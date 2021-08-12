@@ -1,2 +1,2 @@
-# sm_donator-
+# sm_donator
 Basic Donator Interface 
