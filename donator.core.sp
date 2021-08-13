@@ -381,7 +381,7 @@ public bool Forward_OnDonatorConnect(int iClient)
 	bool result;
 	Call_StartForward(g_hForward_OnDonatorConnect);
 	Call_PushCell(iClient);
-	Call_Finish(view_as<int> result);
+	Call_Finish(view_as<int>(result));
 	return result;
 }
 
@@ -394,7 +394,7 @@ public bool Forward_OnPostDonatorCheck(int iClient)
 	bool result;
 	Call_StartForward(g_hForward_OnPostDonatorCheck);
 	Call_PushCell(iClient);
-	Call_Finish(view_as<int> result);
+	Call_Finish(view_as<int>(result));
 	return result;
 }
 
@@ -406,6 +406,6 @@ public bool Forward_OnDonatorsChanged()
 {
 	bool result;
 	Call_StartForward(g_hForward_OnDonatorsChanged);
-	Call_Finish(view_as<int> result);
+	Call_Finish(view_as<int>(result));
 	return result;
 }
