@@ -5,7 +5,12 @@
 
 #define DONATOR_API_VERSON 1.1
 
-functag DonatorMenuCallback DonatorMenu:public(client);
+/*functag DonatorMenuCallback DonatorMenu:public(client);*/
+typeset DonatorMenuCallback {
+  function void(int client);
+}
+
+typedef DonatorMenu = function DonatorMenuCallback (int client);
 
 /**
  * Register a menu item.
