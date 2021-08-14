@@ -1,0 +1,29 @@
+how to make sourcemod donator.core work: MUST setup a sql database! 
+
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installation utility
+sudo systemctl enable mysql
+sudo systemctl start mysql
+mysql -u root -p
+CREATE DATABASE donators;
+SHOW DATABASES;
+INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
+VALUES('steam','localhost',PASSWORD('XXXXXXXX'),'','','');
+FLUSH PRIVILEGES;
+SELECT User, Host, authentication_string FROM mysql.user;
+GRANT ALL PRIVILEGES ON donators.* to steam@localhost;
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'steam'@'localhost';
+exit
+mysql --user=steam --password donators
+CREATE TABLE IF NOT EXISTS `donators` (
+`steamid` varchar(64) default NULL,
+`tag` varchar(128) NOT NULL,
+`level` tinyint(1) NOT NULL default '1'
+);
+INSERT INTO donators(steamid,tag,level)
+VALUES('<my steam ID>','test id',10);
+SELECT * FROM donators;
+exit
+reboot
